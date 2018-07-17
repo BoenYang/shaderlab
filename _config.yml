@@ -32,4 +32,9 @@ theme: whiteboard
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: git@github.com:BoenYang/shaderlab.git
+  branch: master
+backup:
+  repo: git@github.com:BoenYang/shaderlab.git
+  branch: source

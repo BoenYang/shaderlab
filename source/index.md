@@ -1,167 +1,83 @@
 ---
-title: API Reference
-
-language_tabs:
-  - bash
-  - ruby
-  - python
-
-toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='http://github.com/mpociot/whiteboard'>Documentation Powered by Whiteboard</a>
-
-includes:
-  - errors
+title: ShaderLab Refrence
 
 search: true
 ---
 
-# Introduction
+# 简介
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+这里是简介
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+# Cg 标准函数
 
-This example API documentation page was created with [Whiteboard](http://github.com/mpociot/whiteboard). Feel free to edit it and use it as a base for your own API's documentation.
+## abs(x)
 
-# Authentication
+## acos(x)
 
-> To authorize, use this code:
+## asin(x)
 
-```ruby
-require 'kittn'
+## atan(x)
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
+## atan2(x)
 
-```python
-import kittn
+## all(x)
 
-api = kittn.authorize('meowmeowmeow')
-```
+## ceil(x)
 
-```bash
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
+## clamp(x,a,b)
 
-> Make sure to replace `meowmeowmeow` with your API key.
+## cos(x)
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+## cosh(x)
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+## cross(a,b)
 
-`Authorization: meowmeowmeow`
+## degress(x)
+
+## determinant(x)
+
+## dot(a,b)
+
+## exp(x)
+
+## exp2(x)
+
+## floor(x)
+
+## fmod(x)
+
+## frac(x)
+
+## frexp(x,out i)
+
+## lerp(a,b,f)
+
+## log(x)
+
+## log2(x)
+
+## log10(x)
+
+## max(a,b)
+
+## min(a,b)
+
+## mul(M,N)
+
+## mul(M,v)
+
+## mul(v,M)
+
+## noise(x)
+
+## any(x)
+
+## tex2d
 
 <aside class="notice">
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
 
-# Kittens
+# Unity 内置变量
 
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```bash
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```bash
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">If you're not using an administrator API key, note that some kittens will return 403 Forbidden if they are hidden for admins only.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
+# Unity 内置函数
