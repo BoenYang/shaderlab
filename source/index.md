@@ -6,7 +6,9 @@ search: true
 
 # 简介
 
-这里是简介
+这是一份简要的Unity ShaderLab编程参考，提供了常用的cg标准函数参考、Unity常用的内置变量、Unity中提供的cg函数以及一些常用的效果示例，后续会不断更新。不完善之处，敬请谅解，欢迎 [Pull Request Source分支](https://github.com/BoenYang/shaderlab/tree/source)。
+
+`power by [whiteboard](https://github.com/mpociot/whiteboard)`
 
 # Cg 标准函数
 
@@ -99,11 +101,33 @@ search: true
 ### noise(x)
 根据它的参数类型，这个函数可以是一元、二元或三元噪音函数。返回的值在0和1之间，并且通常与给定的输入值一样
 
+### pow(x, y)
+x的y次方
+
+### radians(x)
+函数将角度值转换为弧度值
+
+### round(x)
+返回四舍五入值。
+
+### step(a,x)
+如果x<a，返回0；否则，返回1
+
+### smoothstep(min, max, x)  
+值x位于min、max区间中。如果x=min，返回0；如果x=max，返回1；如果x在两者之间，按照下列公式返回数据：−2∗(x−minmax−min)3+3∗(x−minmax−min)2
+
+### sqrt(x)
+求x的平方根，x必须大于0
+
 ## 几何函数
 
 ## 纹理映射
 
-### tex2D
+### tex2D(sampler2d tex, float2)
+二维纹理查询
+
+### texCUBE(samplerCUBE tex, float3 s)
+查询立方体纹理
 
 <aside class="notice">
 You must replace <code>meowmeowmeow</code> with your personal API key.
@@ -111,17 +135,36 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 
 # Unity 内置变量
 
+## 矩阵
+
+### UNITY_MATRIX_MVP
+Model-View-Project矩阵
+
+### UNITY_MATRIX_MV
+Model-View矩阵
+
+### UNITY_MATRIX_IT_MV
+Model-View逆转置矩阵
+
+### UNITY_MATRIX_T_MV
+Model-View转置矩阵
+
 ## 屏幕相关
-### 1
-### 2
-### 3
+
+### _ScreenParams
+x:相机渲染目标的像素宽度 y:相机渲染目标的像素高度 z:1+1/x w:1+1/y
+
 ## 光照相关
-### 1
-### 2
-### 3
-## 贴图相关
-### 1
-### 2
-### 3
+
+### _WorldSpaceLightPos0
+一般是平行光的位置
+
+## 屏幕缓存
+
+### _CameraDepthTexture
+屏幕深度信息缓存
+
+### _CameraNormalsTexture
+屏幕法线信息缓存
 
 # Unity 内置函数
