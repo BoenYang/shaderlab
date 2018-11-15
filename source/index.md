@@ -8,7 +8,7 @@ search: true
 
 这是一份简要的Unity ShaderLab编程参考，提供了常用的cg标准函数参考、Unity常用的内置变量、Unity中提供的cg函数以及一些常用的效果示例，后续会不断更新。不完善之处，敬请谅解，欢迎 [Pull Request Source分支](https://github.com/BoenYang/shaderlab/tree/source)。
 
-`power by [whiteboard](https://github.com/mpociot/whiteboard)`
+`power by [whiteboard](https://github.com/mpociot/whiteboard)`unity 
 
 # Cg 标准函数
 
@@ -167,4 +167,12 @@ x:相机渲染目标的像素宽度 y:相机渲染目标的像素高度 z:1+1/x 
 ### _CameraNormalsTexture
 屏幕法线信息缓存
 
+### _XXTex_ST
+XX贴图的采样图，float4类型 ,xy的值为材质面板设置的tiling值，zw为offset值
+
 # Unity 内置函数
+
+
+# Unity 内置宏
+TRANSFORM_TEX
+用顶点的uv与材质的tiling和offset值进行计算，确保获取到的uv是应用了tiling以及offset之后的uv值
