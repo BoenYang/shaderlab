@@ -152,7 +152,7 @@ Model-View转置矩阵
 ## 屏幕相关
 
 ### _ScreenParams
-x:相机渲染目标的像素宽度 y:相机渲染目标的像素高度 z:1+1/x w:1+1/y
+屏幕参数，x:相机渲染目标的像素宽度 y:相机渲染目标的像素高度 z:1+1/x w:1+1/y
 
 ## 光照相关
 
@@ -172,7 +172,14 @@ XX贴图的采样图，float4类型 ,xy的值为材质面板设置的tiling值�
 
 # Unity 内置函数
 
+### UnityObjectToWorldNormal
+将本地坐标空间下的法线向量转换到世界坐标空间下，内部调用的是mul(normal,_worldToObject)运算
+
+### UnityObjectToWorldDir
+将本地空间的方向向量转换到世界空间坐标下
+
 
 # Unity 内置宏
 TRANSFORM_TEX
+#define TRANSFORM_TEX(tex,name) (tex.xy * name##_ST.xy + name##_ST.zw)
 用顶点的uv与材质的tiling和offset值进行计算，确保获取到的uv是应用了tiling以及offset之后的uv值
