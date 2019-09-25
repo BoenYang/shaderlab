@@ -1,0 +1,31 @@
+os: linux
+
+language: node_js
+node_js:
+  - 12
+
+cache:
+  npm: true
+
+before_install:
+  - npm install hexo-cli -g
+
+install:
+  - npm install
+
+script:
+  - hexo g
+
+
+after_script:
+  - cd ./public
+  - git init
+  - git config user.name "boenyang"
+  - git config user.email "yang0927mail@gmail.com"
+  - git add .
+  - git commit -m "update shader lab"
+  - git push --force --quiet "https://${TRAVIS_KEY}@${GH_REF}" master:master
+
+env:
+ global:
+   - GH_REF: github.com/BoenYang/shaderlab.git

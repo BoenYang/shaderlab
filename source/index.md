@@ -149,6 +149,8 @@ Model-View逆转置矩阵
 ### UNITY_MATRIX_T_MV
 Model-View转置矩阵
 
+### _Time,_SineTime,_CosTime,unity_DeltaTime
+
 ## 屏幕相关
 
 ### _ScreenParams
