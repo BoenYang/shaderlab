@@ -178,7 +178,7 @@ Model-View转置矩阵
 屏幕albedo颜色信息
 
 ### _CameraGBufferTexture2
-屏幕法线在世界空间下的方向欣喜
+屏幕法线在世界空间下的方向
 
 ### _XXTex_ST
 XX贴图的采样图，float4类型 ,xy的值为材质面板设置的tiling值，zw为offset值 
