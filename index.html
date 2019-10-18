@@ -1,0 +1,114 @@
+
+<!doctype html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>ShaderLab Refrence</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <script src="js/lib/energize.js"></script>
+<script src="js/lib/imagesloaded.min.js"></script>
+<script src="js/lib/jquery_ui.js"></script>
+<script src="js/lib/jquery.highlight.js"></script>
+<script src="js/lib/jquery.tocify.js"></script>
+<script src="js/lib/lunr.js"></script>
+    <script src="js/script.js"></script>
+
+    
+  </head>
+
+  <body class>
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png">
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <img src="images/logo.png">
+      
+      
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      
+      <div id="toc">
+      </div>
+      
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>这是一份简要的Unity ShaderLab编程参考，提供了常用的cg标准函数参考、Unity常用的内置变量、Unity中提供的cg函数以及一些常用的效果示例，后续会不断更新。不完善之处，敬请谅解，欢迎 <a href="https://github.com/BoenYang/shaderlab/tree/source" target="_blank" rel="noopener">Pull Request Source分支</a>。</p>
+<p><code>power by [whiteboard](https://github.com/mpociot/whiteboard)</code>unity </p>
+<h1 id="Cg-标准函数"><a href="#Cg-标准函数" class="headerlink" title="Cg 标准函数"></a>Cg 标准函数</h1><h2 id="数学函数"><a href="#数学函数" class="headerlink" title="数学函数"></a>数学函数</h2><h3 id="abs-x"><a href="#abs-x" class="headerlink" title="abs(x)"></a>abs(x)</h3><p>返回x的绝对值</p>
+<h3 id="acos-x"><a href="#acos-x" class="headerlink" title="acos(x)"></a>acos(x)</h3><p>反余切函数，输入参数范围为[-1,1]， 返回[0,π]区间的弧度值</p>
+<h3 id="asin-x"><a href="#asin-x" class="headerlink" title="asin(x)"></a>asin(x)</h3><p>反正弦函数,输入参数取值区间为[−1,1]，返回弧度值范围为, [−π2,π2]</p>
+<h3 id="atan-x"><a href="#atan-x" class="headerlink" title="atan(x)"></a>atan(x)</h3><p>反正切函数，返回角度值范围为[−π2,π2]</p>
+<h3 id="any-x"><a href="#any-x" class="headerlink" title="any(x)"></a>any(x)</h3><p>输入参数只要有其中一个不为0，则返回true。</p>
+<h3 id="all-x"><a href="#all-x" class="headerlink" title="all(x)"></a>all(x)</h3><p>如果输入参数均不为0，则返回ture； 否则返回flase。&amp;&amp;运算</p>
+<h3 id="ceil-x"><a href="#ceil-x" class="headerlink" title="ceil(x)"></a>ceil(x)</h3><p>对输入参数向上取整。例如： ceil(float(1.3)) ，其返回值为2.0</p>
+<h3 id="clamp-x-a-b"><a href="#clamp-x-a-b" class="headerlink" title="clamp(x,a,b)"></a>clamp(x,a,b)</h3><p>如果x值小于a，则返回a；如果x值大于b，返回b；否则，返回x。</p>
+<h3 id="cos-x"><a href="#cos-x" class="headerlink" title="cos(x)"></a>cos(x)</h3><p>返回弧度x的余弦值。返回值范围为[−1,1]</p>
+<h3 id="cosh-x"><a href="#cosh-x" class="headerlink" title="cosh(x)"></a>cosh(x)</h3><p>双曲余弦（hyperbolic cosine）函数，计算x的双曲余弦值。</p>
+<h3 id="cross-a-b"><a href="#cross-a-b" class="headerlink" title="cross(a,b)"></a>cross(a,b)</h3><p>返回两个三元向量的叉积(cross product)。注意，输入参数必须是三元向量！</p>
+<h3 id="degress-x"><a href="#degress-x" class="headerlink" title="degress(x)"></a>degress(x)</h3><p>弧度转角度,输入参数为弧度值(radians)，函数将其转换为角度值(degrees)</p>
+<h3 id="determinant-M"><a href="#determinant-M" class="headerlink" title="determinant(M)"></a>determinant(M)</h3><p>计算矩阵的行列式因子。</p>
+<h3 id="dot-a-b"><a href="#dot-a-b" class="headerlink" title="dot(a,b)"></a>dot(a,b)</h3><p>返回a和b的点积(dot product)。参数a和b可以是标量，也可以是向量（输入参数方面，点积和叉积函数有很大不同）。</p>
+<p>###exp(x)<br>计算ex的值，e=2.71828182845904523536</p>
+<h3 id="exp2-x"><a href="#exp2-x" class="headerlink" title="exp2(x)"></a>exp2(x)</h3><p>计算2x的值</p>
+<h3 id="floor-x"><a href="#floor-x" class="headerlink" title="floor(x)"></a>floor(x)</h3><p>对输入参数向下取整。例如floor(float(1.3))返回的值为1.0；但是floor(float(-1.3))返回的值为-2.0。该函数与ceil(x)函数相对应。</p>
+<h3 id="fmod-x-y"><a href="#fmod-x-y" class="headerlink" title="fmod(x,y)"></a>fmod(x,y)</h3><p>返回x/y的余数。如果y为0，结果不可预料。</p>
+<h3 id="frac-x"><a href="#frac-x" class="headerlink" title="frac(x)"></a>frac(x)</h3><p>返回标量或矢量的小数位</p>
+<h3 id="lerp-a-b-f"><a href="#lerp-a-b-f" class="headerlink" title="lerp(a,b,f)"></a>lerp(a,b,f)</h3><p>计算(1−f)∗a+b∗f或者a+f∗(b−a)的值。即在下限a和上限b之间进行插值，f表示权值。注意，如果a和b是向量，则权值f必须是标量或者等长的向量。</p>
+<h3 id="log-x"><a href="#log-x" class="headerlink" title="log(x)"></a>log(x)</h3><p>计算ln(x)的值，x必须大于0</p>
+<h3 id="log2-x"><a href="#log2-x" class="headerlink" title="log2(x)"></a>log2(x)</h3><p>计算log(x)2的值，x必须大于0</p>
+<h3 id="log10-x"><a href="#log10-x" class="headerlink" title="log10(x)"></a>log10(x)</h3><p>计算log(x)10的值，x必须大于0</p>
+<h3 id="max-a-b"><a href="#max-a-b" class="headerlink" title="max(a,b)"></a>max(a,b)</h3><p>比较两个标量或等长向量元素，返回最大值。</p>
+<h3 id="min-a-b"><a href="#min-a-b" class="headerlink" title="min(a,b)"></a>min(a,b)</h3><p>比较两个标量或等长向量元素，返回最小值。</p>
+<h3 id="mul-M-N"><a href="#mul-M-N" class="headerlink" title="mul(M,N)"></a>mul(M,N)</h3><p>矩阵M和矩阵N的积，返回值为矩阵</p>
+<h3 id="mul-M-v"><a href="#mul-M-v" class="headerlink" title="mul(M,v)"></a>mul(M,v)</h3><p>矩阵M和列向量v的积，返回值为矩阵</p>
+<h3 id="mul-v-M"><a href="#mul-v-M" class="headerlink" title="mul(v,M)"></a>mul(v,M)</h3><p>行向量v和矩阵M的积，返回值为向量</p>
+<h3 id="noise-x"><a href="#noise-x" class="headerlink" title="noise(x)"></a>noise(x)</h3><p>根据它的参数类型，这个函数可以是一元、二元或三元噪音函数。返回的值在0和1之间，并且通常与给定的输入值一样</p>
+<h3 id="pow-x-y"><a href="#pow-x-y" class="headerlink" title="pow(x, y)"></a>pow(x, y)</h3><p>x的y次方</p>
+<h3 id="radians-x"><a href="#radians-x" class="headerlink" title="radians(x)"></a>radians(x)</h3><p>函数将角度值转换为弧度值</p>
+<h3 id="round-x"><a href="#round-x" class="headerlink" title="round(x)"></a>round(x)</h3><p>返回四舍五入值。</p>
+<h3 id="step-a-x"><a href="#step-a-x" class="headerlink" title="step(a,x)"></a>step(a,x)</h3><p>如果x&lt;a，返回0；否则，返回1</p>
+<h3 id="smoothstep-min-max-x"><a href="#smoothstep-min-max-x" class="headerlink" title="smoothstep(min, max, x)"></a>smoothstep(min, max, x)</h3><p>值x位于min、max区间中。如果x=min，返回0；如果x=max，返回1；如果x在两者之间，按照下列公式返回数据：−2∗(x−minmax−min)3+3∗(x−minmax−min)2</p>
+<h3 id="sqrt-x"><a href="#sqrt-x" class="headerlink" title="sqrt(x)"></a>sqrt(x)</h3><p>求x的平方根，x必须大于0</p>
+<h2 id="几何函数"><a href="#几何函数" class="headerlink" title="几何函数"></a>几何函数</h2><h2 id="纹理映射"><a href="#纹理映射" class="headerlink" title="纹理映射"></a>纹理映射</h2><h3 id="tex2D-sampler2d-tex-float2-uv"><a href="#tex2D-sampler2d-tex-float2-uv" class="headerlink" title="tex2D(sampler2d tex, float2 uv)"></a>tex2D(sampler2d tex, float2 uv)</h3><p>二维纹理查询</p>
+<h3 id="tex2Dlod-sampler2d-tex-float4-uv"><a href="#tex2Dlod-sampler2d-tex-float4-uv" class="headerlink" title="tex2Dlod(sampler2d tex, float4 uv)"></a>tex2Dlod(sampler2d tex, float4 uv)</h3><p>二维纹理查询，根据uv的w坐标得出需要采样的mipmap等级，一般用于在采样的点距离会随距离变化的情况下对贴图进行采样  </p>
+<h3 id="texCUBE-samplerCUBE-tex-float3-s"><a href="#texCUBE-samplerCUBE-tex-float3-s" class="headerlink" title="texCUBE(samplerCUBE tex, float3 s)"></a>texCUBE(samplerCUBE tex, float3 s)</h3><p>查询立方体纹理</p>
+<aside class="notice"><br>You must replace <code>meowmeowmeow</code> with your personal API key.<br></aside>
+
+<h1 id="Unity-内置变量"><a href="#Unity-内置变量" class="headerlink" title="Unity 内置变量"></a>Unity 内置变量</h1><h2 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h2><h3 id="UNITY-MATRIX-MVP"><a href="#UNITY-MATRIX-MVP" class="headerlink" title="UNITY_MATRIX_MVP"></a>UNITY_MATRIX_MVP</h3><p>Model-View-Project矩阵</p>
+<h3 id="UNITY-MATRIX-MV"><a href="#UNITY-MATRIX-MV" class="headerlink" title="UNITY_MATRIX_MV"></a>UNITY_MATRIX_MV</h3><p>Model-View矩阵</p>
+<h3 id="UNITY-MATRIX-IT-MV"><a href="#UNITY-MATRIX-IT-MV" class="headerlink" title="UNITY_MATRIX_IT_MV"></a>UNITY_MATRIX_IT_MV</h3><p>Model-View逆转置矩阵</p>
+<h3 id="UNITY-MATRIX-T-MV"><a href="#UNITY-MATRIX-T-MV" class="headerlink" title="UNITY_MATRIX_T_MV"></a>UNITY_MATRIX_T_MV</h3><p>Model-View转置矩阵</p>
+<h3 id="unity-CameraProjection"><a href="#unity-CameraProjection" class="headerlink" title="unity_CameraProjection"></a>unity_CameraProjection</h3><h3 id="unity-CameraInvProjection"><a href="#unity-CameraInvProjection" class="headerlink" title="unity_CameraInvProjection"></a>unity_CameraInvProjection</h3><p>摄像机的投影逆矩阵，可以用来将clip space下的坐标转换为view space下的坐标，转换之后需要除以w分量</p>
+<h3 id="Time-SineTime-CosTime-unity-DeltaTime"><a href="#Time-SineTime-CosTime-unity-DeltaTime" class="headerlink" title="_Time,_SineTime,_CosTime,unity_DeltaTime"></a>_Time,_SineTime,_CosTime,unity_DeltaTime</h3><h2 id="屏幕相关"><a href="#屏幕相关" class="headerlink" title="屏幕相关"></a>屏幕相关</h2><h3 id="ScreenParams"><a href="#ScreenParams" class="headerlink" title="_ScreenParams"></a>_ScreenParams</h3><p>屏幕参数，x:相机渲染目标的像素宽度 y:相机渲染目标的像素高度 z:1+1/x w:1+1/y</p>
+<h2 id="光照相关"><a href="#光照相关" class="headerlink" title="光照相关"></a>光照相关</h2><h3 id="WorldSpaceLightPos0"><a href="#WorldSpaceLightPos0" class="headerlink" title="_WorldSpaceLightPos0"></a>_WorldSpaceLightPos0</h3><p>一般是平行光的位置</p>
+<h2 id="屏幕缓存"><a href="#屏幕缓存" class="headerlink" title="屏幕缓存"></a>屏幕缓存</h2><h3 id="CameraDepthTexture"><a href="#CameraDepthTexture" class="headerlink" title="_CameraDepthTexture"></a>_CameraDepthTexture</h3><p>屏幕深度信息缓存</p>
+<h3 id="CameraGBufferTexture1"><a href="#CameraGBufferTexture1" class="headerlink" title="_CameraGBufferTexture1"></a>_CameraGBufferTexture1</h3><p>屏幕albedo颜色信息</p>
+<h3 id="CameraGBufferTexture2"><a href="#CameraGBufferTexture2" class="headerlink" title="_CameraGBufferTexture2"></a>_CameraGBufferTexture2</h3><p>屏幕法线在世界空间下的方向</p>
+<h3 id="XXTex-ST"><a href="#XXTex-ST" class="headerlink" title="_XXTex_ST"></a>_XXTex_ST</h3><p>XX贴图的采样图，float4类型 ,xy的值为材质面板设置的tiling值，zw为offset值 </p>
+<h1 id="Unity-内置函数"><a href="#Unity-内置函数" class="headerlink" title="Unity 内置函数"></a>Unity 内置函数</h1><h3 id="UnityObjectToWorldNormal"><a href="#UnityObjectToWorldNormal" class="headerlink" title="UnityObjectToWorldNormal"></a>UnityObjectToWorldNormal</h3><p>将本地坐标空间下的法线向量转换到世界坐标空间下，内部调用的是mul(normal,_worldToObject)运算</p>
+<h3 id="UnityObjectToWorldDir"><a href="#UnityObjectToWorldDir" class="headerlink" title="UnityObjectToWorldDir"></a>UnityObjectToWorldDir</h3><p>将本地空间的方向向量转换到世界空间坐标下</p>
+<h1 id="Unity-内置宏"><a href="#Unity-内置宏" class="headerlink" title="Unity 内置宏"></a>Unity 内置宏</h1><p>TRANSFORM_TEX</p>
+<p>#define TRANSFORM_TEX(tex,name) (tex.xy * name##_ST.xy + name##_ST.zw)<br>用顶点的uv与材质的tiling和offset值进行计算，确保获取到的uv是应用了tiling以及offset之后的uv值</p>
+
+        
+      </div>
+      <div class="dark-box">
+        
+      </div>
+    </div>
+  </body>
+</html>
