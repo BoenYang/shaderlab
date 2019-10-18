@@ -123,8 +123,11 @@ x的y次方
 
 ## 纹理映射
 
-### tex2D(sampler2d tex, float2)
+### tex2D(sampler2d tex, float2 uv)
 二维纹理查询
+
+### tex2Dlod(sampler2d tex, float4 uv)
+二维纹理查询，根据uv的w坐标得出需要采样的mipmap等级，一般用于在采样的点距离会随距离变化的情况下对贴图进行采样  
 
 ### texCUBE(samplerCUBE tex, float3 s)
 查询立方体纹理
@@ -149,6 +152,11 @@ Model-View逆转置矩阵
 ### UNITY_MATRIX_T_MV
 Model-View转置矩阵
 
+### unity_CameraProjection
+
+### unity_CameraInvProjection
+摄像机的投影逆矩阵，可以用来将clip space下的坐标转换为view space下的坐标，转换之后需要除以w分量
+
 ### _Time,_SineTime,_CosTime,unity_DeltaTime
 
 ## 屏幕相关
@@ -166,11 +174,14 @@ Model-View转置矩阵
 ### _CameraDepthTexture
 屏幕深度信息缓存
 
-### _CameraNormalsTexture
-屏幕法线信息缓存
+### _CameraGBufferTexture1
+屏幕albedo颜色信息
+
+### _CameraGBufferTexture2
+屏幕法线在世界空间下的方向欣喜
 
 ### _XXTex_ST
-XX贴图的采样图，float4类型 ,xy的值为材质面板设置的tiling值，zw为offset值
+XX贴图的采样图，float4类型 ,xy的值为材质面板设置的tiling值，zw为offset值 
 
 # Unity 内置函数
 
